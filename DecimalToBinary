@@ -1,0 +1,52 @@
+import java.util.ArrayList;
+import java.util.Scanner;  
+
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        String binaryOutput="1";
+        int input = scanner.nextInt();
+        int binTemp = 1;
+        ArrayList<Integer> binaryCode = new ArrayList<>();
+        //в Аррай листе будет находиться значение по типу: 1 2 4 8 16... 2^n
+        while (binTemp<=input){
+            binaryCode.add(binTemp);
+            if (binTemp*2<=input)
+                binTemp*=2;
+            else
+                break;
+        }
+
+        //Output of elements
+//        System.out.println("Кол-во элементов: " + binaryCode.size());
+//        for (int i = 0; i < binaryCode.size(); i++) {
+//            System.out.print(binaryCode.get(i)+" ");
+//        }
+//        System.out.println("\n------------");
+//        System.out.println(binaryOutput);
+//        System.out.println(binTemp);
+        
+        //Если темп равен инпуту
+        if (binTemp==input){
+            for (int i = 0; i < binaryCode.size()-1; i++) {
+                binaryOutput+="0";
+                }
+        }
+        //Если темп меньше чем наш инпут
+        else {
+            for (int i = binaryCode.size() - 2; i >= 0; i--) {
+                if (binTemp + binaryCode.get(i) <= input) {
+
+                    binTemp += binaryCode.get(i);
+                    binaryOutput += "1";
+
+                }
+                else
+                    binaryOutput += "0";
+                //System.out.println(binaryOutput);
+            }
+        }
+        System.out.println(binaryOutput);
+    }
+}
