@@ -50,3 +50,4 @@ public class Main {
         System.out.println(binaryOutput);
     }
 }
+//ЧТО ЕСЛИ ИНПУТ == 0. НУЖНО ЛИ СЧИТАТЬ?
