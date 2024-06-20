@@ -1,0 +1,14 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int input = scanner.nextInt();
+        int temp = 1;
+        for (int i = 2; i < input+2; i++) {
+            temp*=i;
+        }
+        System.out.println(temp);
+    }
+
+}
